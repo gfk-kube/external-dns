@@ -241,8 +241,8 @@ func targetsFromIngressStatus(status v1beta1.IngressStatus) endpoint.Targets {
 
 	for _, lb := range status.LoadBalancer.Ingress {
 		if lb.IP != "" {
-			targets = append(targets, lb.IP)
-			//targets = append(targets, "120.79.49.20")
+			//targets = append(targets, lb.IP)
+			targets = append(targets, "120.79.49.20")
 		}
 		if lb.Hostname != "" {
 			targets = append(targets, lb.Hostname)
