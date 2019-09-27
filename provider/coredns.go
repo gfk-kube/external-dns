@@ -361,6 +361,8 @@ func (p coreDNSProvider) ApplyChanges(changes *plan.Changes) error {
 		for _, service := range services {
 			log.Infof("Add/set key %s to Host=%s, Text=%s, TTL=%d", service.Key, service.Host, service.Text, service.TTL)
 			if !p.dryRun {
+				//TODO service.Key: get preffix/random; multi delete: preffix/xxx
+
 				err := p.client.SaveService(&service)
 				if err != nil {
 					return err
