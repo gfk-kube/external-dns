@@ -321,7 +321,7 @@ func (p coreDNSProvider) ApplyChanges(changes *plan.Changes) error {
 			for _, target := range ep.Targets {
 				prefix := ep.Labels[randomPrefixLabel]
 				if prefix == "" {
-					prefix = "11223344" //fmt.Sprintf("%08x", rand.Int31())
+					prefix = "666" //fmt.Sprintf("%08x", rand.Int31())
 				}
 
 				service := Service{
@@ -342,7 +342,7 @@ func (p coreDNSProvider) ApplyChanges(changes *plan.Changes) error {
 			if index >= len(services) {
 				prefix := ep.Labels[randomPrefixLabel]
 				if prefix == "" {
-					prefix = "11223344" //fmt.Sprintf("%08x", rand.Int31())
+					prefix = "666" //fmt.Sprintf("%08x", rand.Int31())
 				}
 				services = append(services, Service{
 					Key:         etcdKeyFor(prefix + "." + dnsName),
